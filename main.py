@@ -12,6 +12,8 @@ dewasa = int(input("Bilangan dewasa      : "))
 kanakkanak = int(input("Bilangan kanak-kanak : "))
 wargaemas = int(input("Bilangan Warga emas  : "))
 
+bayaran = int(input("Masukkan nilai bayaran tiket RM"))
+
 def hargakk(hrgkanakk):
     total1 = hrgkanakk * 7
     return total1
@@ -26,26 +28,11 @@ def hargaw(hrgwargaemas):
 
 print()
 
-if kanakkanak > 1:
-    hKanak = hargakk(kanakkanak)
-    print(f"Jumlah harga untuk {kanakkanak} tiket kanak-kanak adalah RM{hKanak}")
-else:
-    hKanak = 7
-    print(f"Jumlah harga untuk {kanakkanak} tiket kanak-kanak adalah RM{hKanak}")
+hKanak = hargakk(kanakkanak)
 
-if dewasa > 1:
-    hDewasa = hargad(dewasa)
-    print(f"Jumlah harga untuk {dewasa} tiket dewasa adalah RM{hDewasa}")
-else:
-    hDewasa = 14
-    print(f"Jumlah harga untuk {dewasa} tiket dewasa adalah RM{hDewasa}")
+hDewasa = hargad(dewasa)
 
-if wargaemas > 1:
-    hWargaemas = hargaw(wargaemas)
-    print(f"Jumlah harga untuk {wargaemas} tiket dewasa adalah RM{hWargaemas}")
-else:
-    hWargaemas = 10
-    print(f"Jumlah harga untuk {wargaemas} tiket dewasa adalah RM{hWargaemas}")
+hWargaemas = hargaw(wargaemas)
 
 def total(pkanak, pdewasa, pwargaemas):
     jumlah = pkanak + pdewasa + pwargaemas
@@ -54,17 +41,5 @@ def total(pkanak, pdewasa, pwargaemas):
 totalAll = total(hKanak, hDewasa, hWargaemas)
 print("Jumlah kesemua tiket adalah RM ", totalAll)
 
-print()
-
-i = 2
-
-while i > 1:
-    bayaran = int(input("Masukkan nilai bayaran tiket RM"))
-    if bayaran < totalAll:
-        print("Bayaran tiket anda tidak mencukupi dengan harga tiket yang anda beli")
-        continue
-    else:
-        baki = bayaran - totalAll
-        print("Anda sudah membuat pembayaran")
-        print("Baki duit anda adalah RM", baki)
-        break
+baki = bayaran - totalAll
+print("Baki duit anda adalah RM", baki)
